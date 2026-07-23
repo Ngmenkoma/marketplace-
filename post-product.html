@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="images/logo.png">
+<title>Post an item — Marketplace</title>
+<link rel="icon" type="image/png" href="images/logo.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="index.html">market<span>place</span></a>
+    <div class="header-actions">
+      <a href="index.html">Back to listings</a>
+      <a href="#" data-logout>Log out</a>
+    </div>
+  </div>
+</header>
+
+<div class="form-page wide">
+  <div class="form-card">
+    <span class="eyebrow">New listing</span>
+    <h2>Post an item for sale</h2>
+    <p class="hint" style="margin-bottom:18px;">Buyers will see your name, location, and contact details from your account to reach you directly.</p>
+
+    <p class="form-msg" id="form-msg"></p>
+
+    <form id="post-form">
+      <div class="field">
+        <label for="title">Item title</label>
+        <input type="text" id="title" placeholder="e.g. Samsung Galaxy A14, lightly used" required>
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="category">Category</label>
+          <select id="category" required></select>
+        </div>
+        <div class="field">
+          <label for="condition">Condition</label>
+          <select id="condition" required>
+            <option value="New">New</option>
+            <option value="Used">Used</option>
+            <option value="Refurbished">Refurbished</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="price">Price (GH₵)</label>
+        <input type="number" id="price" min="0" step="0.01" required>
+        <span class="hint">Enter the normal (non-discounted) price here.</span>
+      </div>
+
+      <div class="field">
+        <label class="checkbox-label">
+          <input type="checkbox" id="on-discount">
+          This item is on discount / offer
+        </label>
+      </div>
+
+      <div class="field" id="discount-field" style="display:none;">
+        <label for="discount">Discount percentage (%)</label>
+        <input type="number" id="discount" min="1" max="90" placeholder="e.g. 20">
+        <span class="hint">We'll calculate the offer price for you and show both prices with the % off, like on Jumia.</span>
+      </div>
+
+      <div class="field">
+        <label for="description">Description</label>
+        <textarea id="description" rows="5" placeholder="Describe the item — condition, why you're selling, anything a buyer should know."></textarea>
+      </div>
+
+      <div class="field">
+        <label for="images">Photos (up to 5)</label>
+        <input type="file" id="images" accept="image/*" multiple style="display:none;">
+        <div class="image-drop" onclick="document.getElementById('images').click()">
+          Click to choose photos
+        </div>
+        <div class="preview-strip" id="preview-strip"></div>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Post item</button>
+    </form>
+  </div>
+</div>
+
+<script type="module" src="js/auth.js"></script>
+<script type="module" src="js/products.js"></script>
+</body>
+</html>

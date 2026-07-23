@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact us — Marketplace</title>
+<link rel="icon" type="image/png" href="images/logo.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <button class="menu-toggle" id="menu-toggle" aria-label="Menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+    <a class="logo" href="index.html">market<span>place</span></a>
+  </div>
+</header>
+<div class="drawer-overlay" id="drawer-overlay"></div>
+<aside class="drawer" id="drawer">
+  <div class="drawer-head">
+    <a class="logo" href="index.html">market<span>place</span></a>
+    <button id="drawer-close" aria-label="Close menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+  </div>
+  <div class="drawer-account" data-guest-only>
+    <a href="login.html">Log in</a>
+    <a href="register.html">Create an account</a>
+  </div>
+  <div class="drawer-account" data-user-only style="display:none;">
+    <span class="drawer-hello">Hi, <span data-user-name></span></span>
+    <a href="account.html">My account</a>
+    <a href="my-listings.html">My listings</a>
+    <a href="messages.html">Messages</a>
+    <a href="post-product.html">+ Post an item</a>
+    <a href="#" data-logout>Log out</a>
+  </div>
+  <div>
+    <div class="drawer-section-head">Our categories</div>
+    <div id="drawer-categories"></div>
+  </div>
+  <div class="drawer-account">
+    <a href="contact.html">Contact us</a>
+  </div>
+</aside>
+
+<div class="form-page wide">
+  <div class="form-card">
+    <span class="eyebrow">Get in touch</span>
+    <h2>Contact us</h2>
+    <p class="hint" style="margin-bottom:18px;">
+      Questions about the platform, a report, or a bug? Reach us directly, or
+      send a message below.
+    </p>
+
+    <div class="info-strip" style="margin-bottom:24px;">
+      <div class="item whatsapp">
+        <div class="icon">💬</div>
+        <div>
+          <h4>WhatsApp</h4>
+          <p><a href="https://wa.me/233556276229" target="_blank" rel="noopener">Chat with support</a></p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="icon">✉️</div>
+        <div>
+          <h4>Email</h4>
+          <p><a href="mailto:support@marketplace.example">support@marketplace.example</a></p>
+        </div>
+      </div>
+    </div>
+
+    <p class="form-msg" id="form-msg"></p>
+
+    <form id="contact-form">
+      <div class="field">
+        <label for="name">Your name</label>
+        <input type="text" id="name" required>
+      </div>
+      <div class="field">
+        <label for="email">Your email</label>
+        <input type="email" id="email" required>
+      </div>
+      <div class="field">
+        <label for="message">Message</label>
+        <textarea id="message" rows="5" required placeholder="What's up?"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Send message</button>
+    </form>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>marketplace</span>
+    <a class="mono" href="index.html">← Back to all listings</a>
+  </div>
+</footer>
+
+<script type="module" src="js/auth.js"></script>
+<script type="module" src="js/contact.js"></script>
+<nav class="bottom-nav" id="bottom-nav">
+  <a href="index.html" class="bn-item" data-bn="home">
+    <svg class="bn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v10h5v-6h4v6h5V10"/></svg>
+    <span>Home</span>
+  </a>
+  <a href="index.html?focus=search" class="bn-item" data-bn="search" id="bn-search-link">
+    <svg class="bn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <span>Search</span>
+  </a>
+  <a href="my-listings.html" class="bn-item" data-bn="my-listings">
+    <svg class="bn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l1 13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+    <span>Listings</span>
+  </a>
+  <a href="post-product.html" class="bn-item" data-bn="post">
+    <svg class="bn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+    <span>Post</span>
+  </a>
+  <a href="messages.html" class="bn-item" data-bn="messages">
+    <svg class="bn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-4.8 7.6 8.5 8.5 0 0 1-8.9-.9L3 20l1.8-4.3a8.5 8.5 0 0 1 8-12.2 8.38 8.38 0 0 1 8.2 8z"/></svg>
+    <span>Messages</span>
+  </a>
+  <a href="account.html" class="bn-item" data-bn="account">
+    <svg class="bn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0 1 16 0v1"/></svg>
+    <span>Account</span>
+  </a>
+</nav>
+
+</body>
+</html>

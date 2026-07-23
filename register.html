@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign up — Marketplace</title>
+<link rel="icon" type="image/png" href="images/logo.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <button class="menu-toggle" id="menu-toggle" aria-label="Menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+    <a class="logo" href="index.html">market<span>place</span></a>
+  </div>
+</header>
+<div class="drawer-overlay" id="drawer-overlay"></div>
+<aside class="drawer" id="drawer">
+  <div class="drawer-head">
+    <a class="logo" href="index.html">market<span>place</span></a>
+    <button id="drawer-close" aria-label="Close menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+  </div>
+  <div class="drawer-account" data-guest-only>
+    <a href="login.html">Log in</a>
+    <a href="register.html">Create an account</a>
+  </div>
+  <div class="drawer-account" data-user-only style="display:none;">
+    <span class="drawer-hello">Hi, <span data-user-name></span></span>
+    <a href="my-listings.html">My listings</a>
+    <a href="messages.html">Messages</a>
+    <a href="post-product.html">+ Post an item</a>
+    <a href="#" data-logout>Log out</a>
+  </div>
+  <div>
+    <div class="drawer-section-head">Our categories</div>
+    <div id="drawer-categories"></div>
+  </div>
+</aside>
+
+<div class="form-page">
+  <div class="form-card">
+    <span class="eyebrow">Join the marketplace</span>
+    <h2>Create your account</h2>
+    <p class="hint" style="margin-bottom:18px;">One account lets you browse, post items to sell, and be reached by buyers.</p>
+
+    <p class="form-msg" id="form-msg"></p>
+
+    <form id="register-form">
+      <div class="field">
+        <label for="name">Full name</label>
+        <input type="text" id="name" required autocomplete="name">
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="email" required autocomplete="email">
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="phone">Phone number</label>
+          <input type="tel" id="phone" placeholder="0244000000" required>
+        </div>
+        <div class="field">
+          <label for="whatsapp">WhatsApp number</label>
+          <input type="tel" id="whatsapp" placeholder="Same as phone if blank">
+        </div>
+      </div>
+      <div class="field">
+        <label for="location">Location</label>
+        <input type="text" id="location" placeholder="e.g. Wa, Upper West Region" required>
+      </div>
+      <div class="field">
+        <label for="password">Password</label>
+        <input type="password" id="password" required minlength="8" autocomplete="new-password">
+        <div id="password-strength" class="strength-meter"></div>
+        <span class="hint">
+          Use at least 8 characters, mixing uppercase, lowercase, numbers, and a
+          symbol (e.g. <span class="mono">Wa!Market2026</span>) — avoid names,
+          birthdays, or words found in a dictionary.
+        </span>
+      </div>
+      <button type="submit" class="btn btn-primary">Create account</button>
+    </form>
+
+    <p class="form-foot">Already have an account? <a href="login.html">Log in</a></p>
+  </div>
+</div>
+
+<script type="module" src="js/auth.js"></script>
+<nav class="bottom-nav" id="bottom-nav">
+  <a href="index.html" class="bn-item" data-bn="home">
+    <svg class="bn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v10h5v-6h4v6h5V10"/></svg>
+    <span>Home</span>
+  </a>
+  <a href="index.html#categories-section" class="bn-item" data-bn="categories">
+    <svg class="bn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+    <span>Categories</span>
+  </a>
+  <a href="post-product.html" class="bn-item" data-bn="post">
+    <svg class="bn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+    <span>Post</span>
+  </a>
+  <a href="messages.html" class="bn-item" data-bn="messages">
+    <svg class="bn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-4.8 7.6 8.5 8.5 0 0 1-8.9-.9L3 20l1.8-4.3a8.5 8.5 0 0 1 8-12.2 8.38 8.38 0 0 1 8.2 8z"/></svg>
+    <span>Messages</span>
+  </a>
+  <a href="login.html" class="bn-item" data-bn="account" data-guest-only>
+    <svg class="bn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0 1 16 0v1"/></svg>
+    <span>Account</span>
+  </a>
+  <a href="my-listings.html" class="bn-item" data-bn="account" data-user-only style="display:none;">
+    <svg class="bn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0 1 16 0v1"/></svg>
+    <span>Account</span>
+  </a>
+</nav>
+
+</body>
+</html>

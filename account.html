@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My account — Marketplace</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <button class="menu-toggle" id="menu-toggle" aria-label="Menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+    <a class="logo" href="index.html">market<span>place</span></a>
+    <div class="header-actions" id="header-actions">
+      <a href="index.html">Back to listings</a>
+      <a href="my-listings.html">My listings</a>
+      <a href="messages.html">Messages</a>
+    </div>
+    <div class="header-icons">
+      <a href="messages.html" class="header-icon-btn" aria-label="Messages"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-4.8 7.6 8.5 8.5 0 0 1-8.9-.9L3 20l1.8-4.3a8.5 8.5 0 0 1 8-12.2 8.38 8.38 0 0 1 8.2 8z"/></svg></a>
+      </div>
+    <div class="account-menu">
+        <button class="avatar-btn" id="avatar-btn" type="button" aria-label="My account" aria-expanded="false"><span id="avatar-initial">?</span></button>
+        <div class="account-dropdown" id="account-dropdown">
+          <div class="account-dropdown-head">
+            <strong id="dropdown-name">Account</strong>
+            <span id="dropdown-phone" class="mono"></span>
+          </div>
+          <a href="account.html">My account</a>
+          <a href="my-listings.html">My listings</a>
+          <a href="reset-password.html">Change password</a>
+          <button type="button" data-logout>Log out</button>
+        </div>
+      </div>
+  </div>
+</header>
+<div class="drawer-overlay" id="drawer-overlay"></div>
+<aside class="drawer" id="drawer">
+  <div class="drawer-head">
+    <a class="logo" href="index.html">market<span>place</span></a>
+    <button id="drawer-close" aria-label="Close menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+  </div>
+  <div class="drawer-account" data-guest-only>
+    <a href="login.html">Log in</a>
+    <a href="register.html">Create an account</a>
+  </div>
+  <div class="drawer-account" data-user-only style="display:none;">
+    <span class="drawer-hello">Hi, <span data-user-name></span></span>
+    <a href="account.html">My account</a>
+    <a href="my-listings.html">My listings</a>
+    <a href="messages.html">Messages</a>
+    <a href="post-product.html">+ Post an item</a>
+  </div>
+  <div>
+    <div class="drawer-section-head">Our categories</div>
+    <div id="drawer-categories"></div>
+  </div>
+</aside>
+
+<div class="form-page">
+  <div class="form-card">
+    <span class="eyebrow">Your profile</span>
+    <h2>My account</h2>
+    <p class="hint" style="margin-bottom:18px;">This is the contact info buyers see on your listings.</p>
+
+    <p class="form-msg" id="form-msg"></p>
+
+    <form id="account-form">
+      <div class="field">
+        <label for="name">Full name</label>
+        <input type="text" id="name" required>
+      </div>
+      <div class="field">
+        <label>Email</label>
+        <input type="email" id="email-display" disabled>
+        <span class="hint">Email can't be changed here.</span>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="phone">Phone number</label>
+          <input type="tel" id="phone" required>
+        </div>
+        <div class="field">
+          <label for="whatsapp">WhatsApp number</label>
+          <input type="tel" id="whatsapp">
+        </div>
+      </div>
+      <div class="field">
+        <label for="location">Location</label>
+        <input type="text" id="location" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Save changes</button>
+    </form>
+
+    <p class="form-foot">
+      <a href="reset-password.html">Change password</a> ·
+      <a href="my-listings.html">View my listings</a>
+    </p>
+  </div>
+</div>
+
+<script type="module" src="js/auth.js"></script>
+<script type="module" src="js/account.js"></script>
+<nav class="bottom-nav" id="bottom-nav">
+  <a href="index.html" class="bn-item" data-bn="home">
+    <svg class="bn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v10h5v-6h4v6h5V10"/></svg>
+    <span>Home</span>
+  </a>
+  <a href="index.html#categories-section" class="bn-item" data-bn="categories">
+    <svg class="bn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+    <span>Categories</span>
+  </a>
+  <a href="post-product.html" class="bn-item" data-bn="post">
+    <svg class="bn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+    <span>Post</span>
+  </a>
+  <a href="messages.html" class="bn-item" data-bn="messages">
+    <svg class="bn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-4.8 7.6 8.5 8.5 0 0 1-8.9-.9L3 20l1.8-4.3a8.5 8.5 0 0 1 8-12.2 8.38 8.38 0 0 1 8.2 8z"/></svg>
+    <span>Messages</span>
+  </a>
+  <a href="account.html" class="bn-item active" data-bn="account">
+    <svg class="bn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0 1 16 0v1"/></svg>
+    <span>Account</span>
+  </a>
+</nav>
+
+</body>
+</html>
